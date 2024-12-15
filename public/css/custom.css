@@ -1,0 +1,40 @@
+/* 默认（亮色模式）样式 */
+body {
+    background-color: #fff;
+    color: #333;
+}
+
+/* 暗夜模式样式 */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #121212;
+        color: #eaeaea;
+    }
+
+    .header {
+        background-color: #333;
+    }
+
+    .footer {
+        background-color: #333;
+    }
+
+    /* 调整其他需要修改的部分 */
+}
+
+
+/* 暗夜模式下的样式 */
+body.dark {
+    background-color: #121212;
+    color: #eaeaea;
+}
+
+body.dark .header {
+    background-color: #333;
+}
+
+body.dark .footer {
+    background-color: #333;
+}
+
+/* 可以继续添加更多自定义的暗夜模式样式 */
