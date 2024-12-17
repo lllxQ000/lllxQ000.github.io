@@ -1,26 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const themeToggle = document.getElementById("theme-toggle");
-    const currentTheme = localStorage.getItem("theme");
+// 获取切换按钮和 <html> 元素
+const themeToggle = document.getElementById('theme-toggle');
+const htmlElement = document.documentElement;
 
-    // 初始化主题
-    if (currentTheme) {
-        document.documentElement.setAttribute("data-theme", currentTheme);
-        if (currentTheme === "dark") {
-            themeToggle.textContent = "☀️"; // 切换按钮为白天模式
-        }
-    }
+// 初始化，从本地存储获取主题
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  htmlElement.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'dark' ? '☀️' : '🌙';
+}
 
-    // 切换主题逻辑
-    themeToggle.addEventListener("click", () => {
-        let theme = document.documentElement.getAttribute("data-theme");
-        if (theme === "dark") {
-            document.documentElement.setAttribute("data-theme", "light");
-            localStorage.setItem("theme", "light");
-            themeToggle.textContent = "🌙"; // 切换按钮为夜间模式
-        } else {
-            document.documentElement.setAttribute("data-theme", "dark");
-            localStorage.setItem("theme", "dark");
-            themeToggle.textContent = "☀️"; // 切换按钮为白天模式
-        }
-    });
+// 监听按钮点击事件
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme');
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+  
+  // 切换主题
+  htmlElement.setAttribute('data-theme', newTheme);
+  themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+
+  // 保存主题到本地存储
+  localStorage.setItem('theme', newTheme);
 });
