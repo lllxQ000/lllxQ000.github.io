@@ -1,0 +1,20 @@
+/* 默认（Light 模式） */
+body {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* 暗夜模式 */
+  [data-theme="dark"] body {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  /* 按钮样式 */
+  .theme-toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+  }
+  
