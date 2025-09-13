@@ -1,0 +1,9 @@
+.DS_Store
+Thumbs.db
+db.json
+*.log
+node_modules/
+.deploy*/
+_multiconfig.yml
+# 删除这一行，确保 public 文件夹中的文件被提交
+# public/

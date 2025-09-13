@@ -1,0 +1,29 @@
+/* 默认是白天模式 */
+:root {
+    --background-color: #ffffff;
+    --text-color: #000000;
+}
+
+/* 暗夜模式 */
+[data-theme="dark"] {
+    --background-color: #000000;
+    --text-color: #ffffff;
+}
+
+/* 应用主题变量 */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    z-index: 1000;
+}
